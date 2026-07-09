@@ -1,0 +1,106 @@
+<div class="min-h-screen bg-slate-100">
+  <div class="grid min-h-screen lg:grid-cols-2">
+    <!-- ================= LEFT SIDE ================= -->
+
+    <section
+      class="relative hidden overflow-hidden bg-gradient-to-br from-blue-700 via-cyan-600 to-sky-400 lg:flex"
+    >
+      <!-- Blur -->
+      <div
+        class="absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"
+      ></div>
+
+      <div
+        class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-300/20 blur-3xl"
+      ></div>
+
+      <div
+        class="relative z-10 flex h-full w-full flex-col justify-between p-14 text-white"
+      >
+        <!-- Logo -->
+
+        <div>
+          <a routerLink="/" class="flex items-center gap-3">
+            <div
+              class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-blue-600 shadow-xl"
+            >
+              LOGO
+            </div>
+
+            <div>
+              <h1 class="text-2xl font-bold">MediCore</h1>
+
+              <p class="text-sm text-blue-100">Hospital Management System</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Content -->
+
+        <div class="max-w-lg">
+          <span
+            class="rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur"
+          >
+            Smart Healthcare Platform
+          </span>
+
+          <h2 class="mt-8 text-5xl font-bold leading-tight">
+            Manage your hospital
+            <br />
+            smarter with
+            <span class="text-cyan-200"> MediCore </span>
+          </h2>
+
+          <p class="mt-6 text-lg leading-8 text-blue-100">
+            One platform to manage patients, doctors, appointments, laboratory,
+            radiology, billing and medical records.
+          </p>
+        </div>
+
+        <!-- Bottom Cards -->
+
+        <div class="grid grid-cols-3 gap-4">
+          <div class="rounded-3xl bg-white/10 p-5 backdrop-blur">
+            <p class="text-3xl font-bold">25K+</p>
+
+            <p class="mt-2 text-sm text-blue-100">Patients</p>
+          </div>
+
+          <div class="rounded-3xl bg-white/10 p-5 backdrop-blur">
+            <p class="text-3xl font-bold">450+</p>
+
+            <p class="mt-2 text-sm text-blue-100">Doctors</p>
+          </div>
+
+          <div class="rounded-3xl bg-white/10 p-5 backdrop-blur">
+            <p class="text-3xl font-bold">120+</p>
+
+            <p class="mt-2 text-sm text-blue-100">Clinics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RIGHT SIDE ================= -->
+
+    <section class="flex items-center justify-center px-6 py-10">
+      <div
+        class="w-full max-w-lg rounded-[32px] bg-white p-8 shadow-xl md:p-12"
+      >
+        <!-- Mobile Logo -->
+
+        <div class="mb-8 flex justify-center lg:hidden">
+          <div
+            class="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600 text-3xl text-white shadow-lg"
+          >
+            🏥
+          </div>
+        </div>
+
+        <!-- Dynamic Page -->
+
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
+</div>

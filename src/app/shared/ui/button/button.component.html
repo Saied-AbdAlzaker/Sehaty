@@ -1,0 +1,44 @@
+<button
+    [type]="type()"
+    [disabled]="disabled() || loading()"
+    class="inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+
+    [class.bg-blue-600]="variant() === 'primary'"
+    [class.hover:bg-blue-700]="variant() === 'primary'"
+    [class.text-white]="variant() === 'primary'"
+
+    [class.bg-slate-100]="variant() === 'secondary'"
+    [class.text-slate-700]="variant() === 'secondary'"
+
+    [class.border]="variant() === 'outline'"
+    [class.border-slate-300]="variant() === 'outline'"
+    [class.text-slate-700]="variant() === 'outline'">
+
+    @if (loading()) {
+
+        <svg
+            class="h-5 w-5 animate-spin"
+            viewBox="0 0 24 24">
+
+            <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="3"
+                fill="none"
+                opacity=".25" />
+
+            <path
+                fill="currentColor"
+                d="M22 12a10 10 0 00-10-10v3a7 7 0 017 7h3z"/>
+
+        </svg>
+
+    } @else {
+
+        {{ text() }}
+
+    }
+
+</button>

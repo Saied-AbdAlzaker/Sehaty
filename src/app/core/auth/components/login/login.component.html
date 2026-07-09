@@ -1,0 +1,129 @@
+<div>
+  <!-- Heading -->
+
+  <div class="text-center">
+    <h1 class="text-3xl font-bold text-slate-900">Welcome Back 👋</h1>
+
+    <p class="mt-3 text-slate-500">Sign in to continue to your dashboard</p>
+  </div>
+
+  <!-- Form -->
+
+  <form [formGroup]="loginForm" (ngSubmit)="submit()" class="mt-10 space-y-6">
+    <!-- Email -->
+
+    <div>
+      <label class="mb-2 block text-sm font-medium text-slate-700">
+        Email Address
+      </label>
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="doctor@hospital.com"
+        class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+      />
+
+      @if (
+        loginForm.controls.email.touched && loginForm.controls.email.invalid
+      ) {
+        <p class="mt-2 text-sm text-red-500">Please enter a valid email.</p>
+      }
+    </div>
+
+    <!-- Password -->
+
+    <div>
+      <label class="mb-2 block text-sm font-medium text-slate-700">
+        Password
+      </label>
+
+      <div class="relative">
+        <input
+          [type]="hidePassword() ? 'password' : 'text'"
+          formControlName="password"
+          placeholder="Enter password"
+          class="w-full rounded-xl border border-slate-300 px-4 py-3 pr-14 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+        />
+
+        <button
+          type="button"
+          (click)="togglePassword()"
+          class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500"
+        >
+          {{ hidePassword() ? "👁️" : "🙈" }}
+        </button>
+      </div>
+
+      @if (
+        loginForm.controls.password.touched &&
+        loginForm.controls.password.invalid
+      ) {
+        <p class="mt-2 text-sm text-red-500">
+          Password must be at least 6 characters.
+        </p>
+      }
+    </div>
+
+    <!-- Remember -->
+
+    <div class="flex items-center justify-between">
+      <label class="flex cursor-pointer items-center gap-2">
+        <input
+          type="checkbox"
+          formControlName="remember"
+          class="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+        />
+
+        <span class="text-sm text-slate-600"> Remember me </span>
+      </label>
+
+      <a
+        routerLink="/forgot-password"
+        class="text-sm font-medium text-blue-600 hover:text-blue-700"
+      >
+        Forgot Password?
+      </a>
+    </div>
+
+    <!-- Button -->
+
+    <button
+      type="submit"
+      class="w-full rounded-xl bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700"
+    >
+      Sign In
+    </button>
+  </form>
+
+  <!-- Divider -->
+
+  <div class="my-8 flex items-center">
+    <div class="h-px flex-1 bg-slate-200"></div>
+
+    <span class="mx-4 text-sm text-slate-400"> OR </span>
+
+    <div class="h-px flex-1 bg-slate-200"></div>
+  </div>
+
+  <!-- Google -->
+
+  <button
+    class="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 py-3 transition hover:bg-slate-50"
+  >
+    Continue with Google
+  </button>
+
+  <!-- Footer -->
+
+  <p class="mt-8 text-center text-sm text-slate-500">
+    Don't have an account?
+
+    <a
+      routerLink="/register"
+      class="font-semibold text-blue-600 hover:text-blue-700"
+    >
+      Create Account
+    </a>
+  </p>
+</div>
